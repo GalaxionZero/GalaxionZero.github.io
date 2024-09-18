@@ -1,0 +1,31 @@
+p {
+    color: red;
+    font-size: 20px;
+    padding-left: 20px;
+    width: 200px;
+    height: auto;
+    background-color: yellow;
+}
+
+div {
+    color: blue;
+    font-size: 20px;
+    padding-left: 20px;
+    width: 200px;
+    height: auto;
+    background-color: green;
+}
+
+#id1 {
+    color: green;
+    font-size: 20px;
+    padding-left: 20px;
+    width: 200px;
+    height: auto;
+    background-color: red;
+}
+
+.border {
+    border: 6px double black;
+    padding : 20px;
+}
