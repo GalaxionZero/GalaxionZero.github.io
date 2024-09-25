@@ -309,7 +309,12 @@ a, .button .navbar-item {
 
 .dark-mode .hero-image {
     background-image: url(/POSTTEST3/assets/BG_CS_PV4_116.jpg);
+    transition-behavior: smooth;
     transition: 0.3s;
 }
 
 
+.dark-mode .navbar-section img {
+    filter: invert();
+    transition: 0.3s;
+}
