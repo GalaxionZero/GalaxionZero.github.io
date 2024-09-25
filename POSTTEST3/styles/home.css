@@ -114,8 +114,14 @@ a, .button .navbar-item {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 20px;
+}
+
+.container-card h4{
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .card:hover {
@@ -277,6 +283,9 @@ a, .button .navbar-item {
     transition: 0.3s;
 }
 
+.dark-mode .container-card {
+    filter: invert();
+}
 
 .container-card h4{
     text-align: center;
@@ -302,3 +311,5 @@ a, .button .navbar-item {
     background-image: url(/POSTTEST3/assets/BG_CS_PV4_116.jpg);
     transition: 0.3s;
 }
+
+

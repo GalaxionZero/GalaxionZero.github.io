@@ -55,6 +55,7 @@ const darkModeToggle = document.getElementById('dark-mode-toggle');
 darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
   document.hero-image.classList.toggle('dark-mode');
+  document.container-card.classList.toggle('dark-mode');
 });
 
 const news = document.getElementById('news');
