@@ -1,15 +1,15 @@
-// const audio = document.getElementById('background-audio');
-// const toggleButton = document.getElementById('audio-toggle');
+const audio = document.getElementById('background-audio');
+const toggleButton = document.getElementById('audio-toggle');
 
-// toggleButton.addEventListener('click', () => {
-//   if (audio.autoplay) {
-//     audio.autoplay = false;
-//     audio.pause();
-//   } else {
-//     audio.autoplay = true;
-//     audio.play();
-//   }
-// });
+toggleButton.addEventListener('click', () => {
+  if (audio.autoplay) {
+    audio.autoplay = false;
+    audio.pause();
+  } else {
+    audio.autoplay = true;
+    audio.play();
+  }
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -50,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
 darkModeToggle.addEventListener('click', () => {
@@ -64,4 +61,12 @@ const news = document.getElementById('news');
 
 news.addEventListener('click', () => {
   alert('COMING SOON...');
+});
+
+
+const hamburger = document.getElementById('hamburger');
+const navbarlist = document.getElementById('navbar-list');
+
+hamburger.addEventListener('click', () => {
+    navbarlist.style.display = navbarlist.style.display === 'flex' ? 'none' : 'flex';
 });
