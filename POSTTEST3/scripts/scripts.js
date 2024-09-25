@@ -57,8 +57,8 @@ news.addEventListener('click', () => {
 
 
 const hamburger = document.getElementById('hamburger');
-const navbarlist = document.getElementById('navbar-list');
+const navbarList = document.getElementById('navbar-list');
 
 hamburger.addEventListener('click', () => {
-    navbarlist.style.display = navbarlist.style.display === 'flex' ? 'none' : 'flex';
+    navbarList.style.display = navbarList.style.display === 'flex' ? 'none' : 'flex';
 });
