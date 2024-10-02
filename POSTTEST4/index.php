@@ -9,34 +9,32 @@
     <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-    <nav class="navbar-section">
-        <img src="assets/Prime_Student_Council_Icon.webp" alt="GSC Icon" width="100" height="100">
-        
-        <menu id="navbar-list">
-            <li class="navbar-item">
-                <a href=#home>
-                    Home
-                </a>
-            </li>
-            <li class="navbar-item">
-                <a href=#about-us>
-                    About Us
-                </a>
-            </li>
-            <li class="navbar-item">
-                <a href="#" id="news">
-                    News
-                </a>
-            </li>
-        </menu>
-        
-        <button id="dark-mode-toggle" class="dark-mode-toggle">Change OS</button>
-        
-        <button class="hamburger" id="hamburger">
-            <img src="assets/Blue_Archive_EN_logo.png" alt="hamburger" width="100">
-        </button>
-        
-    </nav>
+    <style>
+        .hero-image {
+            width: 100%;
+            height: auto;
+            filter: brightness(50%);
+            height: 600px;
+            object-fit: cover;
+            object-position: center;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            transition: 0.3s;
+            background-image: url(assets/Kivotos.webp)
+        }
+
+        .dark-mode .hero-image {
+            background-image: url(assets/BG_CS_PV4_116.jpg);
+            transition-behavior: smooth;
+            transition: 0.3s;
+        }
+    </style>
+
+    <?php require("navbar.php"); ?>
     
     <main class="hero-section" id="home">
         <div class="hero-image"></div>
@@ -49,7 +47,22 @@
                 <p class="hero-description">
                     The official broadcasting platform of the General Student Council
                 </p>
-                <button id="audio-toggle" class="hero-description">Immerse Yourself</button>
+                <a href="login.php">
+                    <button id="audio-toggle" class="hero-description">Immerse Yourself</button>
+                </a>
+
+                <div class="hero-description">
+                    <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            $username = $_POST["username"];
+                            $password = $_POST["password"];
+                            $email = $_POST["email"];
+
+                            echo "<p>Welcome $username-Sensei</p><br>";
+                        }
+                    ?>
+                </div>
+
             </hgroup>
         </div>
         

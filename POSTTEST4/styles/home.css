@@ -51,23 +51,6 @@ a, .button .navbar-item {
     align-items: center;
     transition: 0.3s;
 }
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    filter: brightness(50%);
-    height: 600px;
-    object-fit: cover;
-    object-position: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    text-align: center;
-    background-image: url(/POSTTEST3/assets/Kivotos.webp);
-    transition: 0.3s;
-}
   
 .hero-container {
     position: absolute;
@@ -75,7 +58,7 @@ a, .button .navbar-item {
     align-items: center;
     transition: 0.3s;
 }
-  
+
 .hero-title {
     color: white;
     font-size: 64px;
@@ -317,8 +300,8 @@ a, .button .navbar-item {
 
 
 .hero-container button {
-    background-color: transparent;
-    color: white;
+    background-color: #d4eaff;
+    color: rgb(0, 0, 0);
     padding: 16px 20px;
     border: none;
     cursor: pointer;
@@ -327,14 +310,15 @@ a, .button .navbar-item {
     margin-top: 20px;
 }
 
-.dark-mode .hero-image {
-    background-image: url(/POSTTEST3/assets/BG_CS_PV4_116.jpg);
-    transition-behavior: smooth;
-    transition: 0.3s;
-}
-
-
 .dark-mode .navbar-section img {
     filter: invert();
     transition: 0.3s;
+}
+
+.dark-mode .hero-container button {
+    background-color:#7c28fa;
+}
+
+.dark-mode .dark-mode-toggle {
+    color: #d4eaff;
 }
