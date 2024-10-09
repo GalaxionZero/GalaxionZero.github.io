@@ -33,3 +33,18 @@
     </button>
 
     </nav>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navbarList = document.getElementById('navbar-list');
+
+        hamburger.addEventListener('click', () => {
+            navbarList.style.display = navbarList.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        const news = document.getElementById('news');
+
+        news.addEventListener('click', () => {
+        alert('COMING SOON...');
+        });
+    </script>

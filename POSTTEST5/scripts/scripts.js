@@ -48,17 +48,3 @@ darkModeToggle.addEventListener('click', () => {
   document.container-card.classList.toggle('dark-mode');
   document.navbar-section.classList.toggle('dark-mode');
 });
-
-const news = document.getElementById('news');
-
-news.addEventListener('click', () => {
-  alert('COMING SOON...');
-});
-
-
-const hamburger = document.getElementById('hamburger');
-const navbarList = document.getElementById('navbar-list');
-
-hamburger.addEventListener('click', () => {
-    navbarList.style.display = navbarList.style.display === 'flex' ? 'none' : 'flex';
-});

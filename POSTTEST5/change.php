@@ -1,20 +1,27 @@
 <?php
+    session_start();
+
     require("koneksi.php");
 
-    if (isset($_POST['username'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
+    $email = $_SESSION['email'];
+    $password = $_SESSION['password'];
+    $username = $_SESSION['username'];
 
-        $query = "INSERT INTO sensei (username, password, email) VALUES ('$username', '$password', '$email')";
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $newUsername = $_POST['username'];
+
+        $query = "UPDATE sensei SET username = '$newUsername' WHERE email = '$email'";
 
         if (mysqli_query($conn, $query)) {
-            echo "<script>alert('Data berhasil ditambahkan')</script>";
-            header("Location: login.php");
+            $_SESSION['username'] = $newUsername;
+            header("Location: profile.php");
+            exit;
         } else {
-            echo "<script>alert('Data gagal ditambahkan')</script>";
+            echo "Error updating username: " . mysqli_error($conn);
         }
     }
+
+    mysqli_close($conn);
 ?>
 
 
@@ -28,7 +35,7 @@
     <link rel="stylesheet" href="styles/home.css">
     
     <link rel="Icon" href="assets/Prime_Student_Council_Icon.webp">
-</head> 
+</head>
 <body>
     <style>
         .container2 {
@@ -46,23 +53,13 @@
     <?php require("navbar.php"); ?>
 
     <main class="container2">
-        
         <div id="login-container" class="login-container">
             <form id="login-form" method="POST">
-                <label for="username">Username:</label>
+                <label for="newUsername">New Username:</label>
                 <input type="text" id="username" name="username" required><br><br>
                 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br><br>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                
-                <input type="submit" id="login-button" value="Sign Up">
+                <input type="submit" id="login-button" value="Change Name">
             </form>
-            <div>
-                <br>Already have an account? <a href="login.php"><span>Login</span></a>
-            </div>
         </div>
     </main>
 

@@ -16,7 +16,7 @@
 
         while ($data = mysqli_fetch_assoc($result)) {
             if ($data['email'] == $email && $data['password'] == $password) {
-                $_SESSION['email'] = $data['email'];
+                $_SESSION['email'] = $email;
                 $_SESSION['password'] = $data['password'];
                 $_SESSION['username'] = $data['username'];
                 echo "<script>alert('Login berhasil')</script>";
@@ -41,6 +41,8 @@
     <title>Sign Up Page</title>
     <link rel="stylesheet" href="styles/login.css">
     <link rel="stylesheet" href="styles/home.css">
+    
+    <link rel="Icon" href="assets/Prime_Student_Council_Icon.webp">
 </head>
 <body>
     <style>
