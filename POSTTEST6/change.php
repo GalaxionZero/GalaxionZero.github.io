@@ -30,7 +30,7 @@
                 ";
                 exit;
             } else {
-                if (!empty($oldPhoto) && file_exists($oldPhoto)) {
+                if (!empty($oldPhoto) && file_exists($oldPhoto) && $oldPhoto != "assets/sensei_default_profile.jpeg") {
                     unlink($oldPhoto);
                 }
 
@@ -40,6 +40,20 @@
                             alert('Berhasil mengupload gambar!');
                         </script>
                     ";
+                    $query = "UPDATE sensei SET username = '$newUsername', photo_address = '$photo' WHERE email = '$email'";
+            
+                    if (mysqli_query($conn, $query)) {
+                        $_SESSION['username'] = $newUsername;
+                        if (!empty($photo)) {
+                            $_SESSION['photo_address'] = "pfp_img/" . $photo;
+                        } else {
+                            $_SESSION['photo_address'] = "assets/sensei_default_profile.jpeg";
+                        }
+                        header("Location: profile.php");
+                        exit;
+                    } else {
+                        echo "Error updating username: " . mysqli_error($conn);
+                    }
                 } else {
                     echo "
                         <script>
@@ -51,20 +65,9 @@
             }
         } else {
             $photo = $oldPhoto;
-        }
-
-        $query = "UPDATE sensei SET username = '$newUsername', photo_address = '$photo' WHERE email = '$email'";
-
-        if (mysqli_query($conn, $query)) {
-            $_SESSION['username'] = $newUsername;
-            if (!empty($photo)) {
-                $_SESSION['photo_address'] = "pfp_img/" . $photo;
-            }
             header("Location: profile.php");
-            exit;
-        } else {
-            echo "Error updating username: " . mysqli_error($conn);
         }
+
     }
 
     mysqli_close($conn);
@@ -106,7 +109,7 @@
                 <label for="photo">New Profile Picture:</label>
                 <input type="file" id="photo" name="photo">
                 <br><br>
-                <input type="submit" id="login-button" value="Change Name">
+                <input type="submit" id="login-button" value="Submit Changes">
             </form>
         </div>
     </main>

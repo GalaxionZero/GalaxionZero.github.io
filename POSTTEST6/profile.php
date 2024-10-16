@@ -8,6 +8,8 @@
         exit;
     }
 
+    echo $_SESSION['photo_address'];
+
     $currentUser = $_SESSION['username'];
     $currentPassword = $_SESSION['password'];
     $currentEmail = $_SESSION['email'];
@@ -34,7 +36,7 @@
 
     <main class="profile-container">
         <div class="profile-picture">
-            <img src="<?php echo $_SESSION['photo_address']?>" alt="Profile Picture">
+            <img src="<?php echo $_SESSION['photo_address']?>" alt="Profile Picture" style="width: 280px; height: 320px">
         </div>
         <div class="profile-description">
             <h2><?php echo $currentUser; ?></h2>
