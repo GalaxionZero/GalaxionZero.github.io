@@ -12,8 +12,11 @@
         $newUsername = $_POST['username'];
         $tmp_photo = $_FILES['photo']['tmp_name'];
         $photo = $_FILES['photo']['name'];
+        $photo_size = $_FILES['photo']['size'];
 
         $oldPhoto = $_SESSION['photo_address'];
+
+        $maxSize = 2 * 1024 * 1024;
 
         if (!empty($photo)) {
             $validExtension = ['jpg', 'jpeg', 'png', 'webp'];
@@ -25,6 +28,14 @@
                 echo "
                     <script>
                         alert('File yang diupload bukan gambar!');
+                        document.location.href = 'change.php';
+                    </script>
+                ";
+                exit;
+            } else if ($photo_size > $maxSize) {
+                echo "
+                    <script>
+                        alert('Ukuran file terlalu besar!');
                         document.location.href = 'change.php';
                     </script>
                 ";
@@ -108,6 +119,10 @@
                 <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" required><br><br>
                 <label for="photo">New Profile Picture:</label>
                 <input type="file" id="photo" name="photo">
+                <br>
+                <small>Allowed file types: jpg, jpeg, png, webp</small>
+                <br>
+                <small>Max file size: 2MB</small>
                 <br><br>
                 <input type="submit" id="login-button" value="Submit Changes">
             </form>

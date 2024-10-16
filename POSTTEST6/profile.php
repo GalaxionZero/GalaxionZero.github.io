@@ -8,8 +8,6 @@
         exit;
     }
 
-    echo $_SESSION['photo_address'];
-
     $currentUser = $_SESSION['username'];
     $currentPassword = $_SESSION['password'];
     $currentEmail = $_SESSION['email'];
