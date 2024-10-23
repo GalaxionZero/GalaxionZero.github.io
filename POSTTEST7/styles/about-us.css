@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Noto Sans Display", sans-serif;
+    margin: 0;
+}
+
+.about-us-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
